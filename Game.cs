@@ -4,21 +4,24 @@ using System.Windows.Controls;
 
 namespace TrésorExpress
 {
-    public class Game
+    internal class Game
     {
+        private Canvas canva;
         private Player player;
         private Treasure treasure;
+        private const double size = 20; // Taille de la grille (20x20 pixels)
 
         public Game()
         {
-            // Position de départ (à ajuster plus tard)
-            player = new Player(new Point(0, 0));
-            treasure = new Treasure(new Point(350, 350));
+            this.canva = new Canvas();
+            player = new Player(new Point(0, 0)); // Position de départ du joueur
+            treasure = new Treasure(new Point(100, 100)); // Position du trésor
         }
 
         public void MovePlayer(Direction direction)
         {
             player.Move(direction);
+            CheckVictory();
         }
 
         public void Draw(Canvas canvas)
@@ -30,9 +33,8 @@ namespace TrésorExpress
 
         public bool CheckVictory()
         {
-            // Comparer les positions (tolérance 0)
-            return player.Position.X == treasure.Position.X &&
-                   player.Position.Y == treasure.Position.Y;
+            return Math.Abs(player.Position.X - treasure.Position.X) < size &&
+                   Math.Abs(player.Position.Y - treasure.Position.Y) < size;
         }
     }
 }

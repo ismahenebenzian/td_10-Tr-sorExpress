@@ -8,7 +8,7 @@
         Title="Chasse au Trésor" Height="450" Width="450"
         KeyDown="Window_KeyDown">
     <Grid>
-        <Canvas Height="400" Width="400" Background="Beige" />
+        <Canvas x:Name="GameCanvas" Height="400" Width="400" Background="Beige" />
 
     </Grid>
 </Window>
