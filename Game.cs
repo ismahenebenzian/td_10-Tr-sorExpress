@@ -9,7 +9,7 @@ namespace TrésorExpress
         private Canvas canva;
         private Player player;
         private Treasure treasure;
-        private const double size = 20; // Taille de la grille (20x20 pixels)
+        private const double size = 20; 
 
         public Game()
         {

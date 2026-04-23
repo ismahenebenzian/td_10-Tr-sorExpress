@@ -11,8 +11,8 @@ namespace appli
         public MainWindow()
         {
             InitializeComponent();
-            game = new Game();                     // constructeur sans paramètre
-            game.Draw(GameCanvas);                // dessin initial
+            game = new Game();                     
+            game.Draw(GameCanvas);                
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
