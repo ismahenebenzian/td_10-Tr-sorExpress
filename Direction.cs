@@ -4,7 +4,12 @@ using System.Text;
 
 namespace TrésorExpress
 {
-    class Game
+    public enum Direction
     {
+        Up,
+        Down,
+        Left,
+        Right
     }
+
 }
